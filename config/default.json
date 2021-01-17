@@ -1,0 +1,27 @@
+{
+    "mongo": {
+        "host": "localhost",
+        "port": "27017",
+        "db": "bwa"
+    },
+    "session": {
+        "name": "bwa",
+        "secret": "9Cpaf4z&2mR5gd79iEv",
+        "resave": false,
+        "rolling": true,
+        "saveUninitialized": false,
+        "unset": "destroy",
+        "cookie": {
+            "httpOnly": true,
+            "maxAge": 3600000,
+            "path": "/",
+            "sameSite": "lax",
+            "secure": false
+        }
+    },
+    "admin": {
+        "name": "admin",
+        "email": "admin@email.fi",
+        "password": "123123123123"
+    }
+}

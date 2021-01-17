@@ -1,0 +1,41 @@
+<div id="question-{{#if this.id}}{{this.id}}{{/if}}" data-qid="{{#if this.id}}{{this.id}}{{/if}}" class="container question-container">
+    <div class="row mt-2">
+            <div class="card card-body">
+                <div class="text-right">
+                    <button type="button" onclick="removeQuestion('#question-{{#if this.id}}{{this.id}}{{/if}}')" id="removeQuestionbtn" class="btn btn-outline-danger">&#128465;</button>
+                </div>
+                <div class="form-group row">
+                    <div class="col-12">
+                        <label>Question title</label><input type="text" name="title" class="form-control q-title" {{#if this.title}}value="{{this.title}}" {{/if}} required>
+                    </div>
+                    <br>
+                    <div class="col-12">    
+                        <label>Max points</label><input type="number" min="1" name="maxPoints" class="form-control q-max-points" {{#if this.maxPoints}}value="{{this.maxPoints}}" {{/if}} required>
+                    </div>
+                    
+                        <div class="table-responsive mt-4 text-center">
+
+                            <table id="q-options-{{this.id}}" class="table options-table">
+                                <tr>
+                                    <th>Correct</th>
+                                    <th>Option</th>
+                                    <!--<th>Hint</th>-->
+                                    <th>Remove</th>
+                                </tr>
+                                {{#if this.options}}
+                                    {{#each this.options as |option index|}}
+                                    <tr id="option-{{this.id}}" class="option-tr">
+                                        <td>
+                                            <input type="radio" name="q-correctness-{{../id}}" value="{{this.id}}" {{#if this.correctness}}checked="checked" {{/if}}  class="correctness" required />
+                                        </td>
+                                        {{>options_editor option}}
+                                    </tr>
+                                    {{/each}}
+                                {{/if}}
+                            </table>
+                            <button class="btn btn-secondary" onclick="addOption('{{this.id}}');" id="addOptionbtn" type="button" >Add option</button>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>

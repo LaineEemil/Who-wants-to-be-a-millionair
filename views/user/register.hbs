@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-6 m-auto">
+            <div class="card card-body">
+                <h3 class="text-center mb-3"><i class="fas fa-user-plus"></i> Register</h3>
+                {{>messages}}
+                <form method="POST" action="/users/register">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" class="form-control" id="name" {{#if name}}value="{{name}}" {{/if}} placeholder="Matti Meikäläinen" required>
+						
+						<label for="email">Email</label>
+                        <input type="email" name="email" class="form-control" id="email" {{#if email}}value="{{email}}" {{/if}} placeholder="matti.meikalainen@example.com" required>
+                        
+						<label for="password">Password</label>
+                        <input type="password" name="password" class="form-control" id="password" {{#if password}}value="{{password}}" {{/if}} placeholder="Password" required>
+						
+						<label for="passwordConfirmation">Password Confirmation</label>
+                        <input type="password" name="passwordConfirmation" class="form-control" id="passwordConfirmation" {{#if passwordConfirmation}}value="{{passwordConfirmation}}" {{/if}} placeholder="Password confirmation" required>
+                    </div>
+                    <button type="submit" id="btnRegister" class="btn btn-primary">Register</button>
+                </form>
+                <p class="lead mt-4">Already registered? <a href="/users/login">Login</a></p>
+            </div>
+        </div>
+    </div>
+</div>

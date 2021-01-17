@@ -1,0 +1,35 @@
+{{#if questionnaires}}
+<div class="input-group">
+    <input id="questionnaire-search" class="form-control" placeholder="Search..." />
+    <div class="input-group-prepend">
+        <span class="input-group-text">from</span>
+    </div>
+    <select id="search-type-select" class="form-control col-3">
+        <option value="1">Questionnaire titles</option>
+        <option value="2">Questions</option>
+        <option value="3">Both</option>
+    </select>
+</div>
+<br>
+{{#withGroup questionnaires 100}}
+<div class="">
+    <table class="table">
+        <tr>
+            <!--<th><input type="checkbox" /></th>-->
+            <th>Title</th>
+            <th># of questions</th>
+            <th>Submissions</th>
+            <th>Delete</th>
+        </tr>
+        {{#each this as |questionnaire index|}}
+        {{>questionnaire_list_item questionnaire}}
+        {{/each}}
+    </table>
+</div>
+{{/withGroup}}
+{{else}}
+<div class="alert alert-danger">
+    <p>No questionnaires found.</p>
+</div>
+{{/if}}
+<a href="/questionnaires/new" class="btn btn-primary">Add</a>

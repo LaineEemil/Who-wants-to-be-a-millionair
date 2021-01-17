@@ -1,0 +1,19 @@
+{{#if questionnaires}}
+{{#withGroup questionnaires 100}}
+<div class="">
+    <table class="table">
+        <tr>
+            <th>Title</th>
+            <th># of questions</th>
+        </tr>
+    {{#each this as |questionnaire index|}}
+    {{>questionnaire_select_item questionnaire}}
+    {{/each}}
+    </table>
+</div>
+{{/withGroup}}
+{{else}}
+<div class="alert alert-danger">
+    <p>No questionnaires found.</p>
+</div>
+{{/if}}

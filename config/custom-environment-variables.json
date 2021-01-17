@@ -1,0 +1,10 @@
+{
+    "session": {
+        "secret": "9Cpaf4z&2mR5gd79iEv"
+    },
+    "admin": {
+        "name": "admin",
+        "email": "admin@email.fi",
+        "password": "1234567890"
+    }
+}

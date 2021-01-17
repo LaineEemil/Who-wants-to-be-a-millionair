@@ -1,0 +1,11 @@
+<td>
+    <input type="text" name="option" placeholder="Option" id="add-option-{{this.id}}" class="form-control" {{#if this.option}}value="{{this.option}}" {{/if}} required>
+    <br>
+    <input type="text" name="hint" placeholder="Hint" id="add-hint-{{this.id}}" class="form-control" {{#if this.hint}}value="{{this.hint}}" {{/if}}>
+</td>
+<!--<td>
+    <input type="text" name="hint" class="form-control" {{#if this.hint}}value="{{this.hint}}" {{/if}} required>
+</td>-->
+<td>
+    <button type="button" onclick="removeOption('#option-{{#if this.id}}{{this.id}}{{/if}}')" id="removeOptionbtn" class="btn btn-outline-danger">&#128465;</button>
+</td>

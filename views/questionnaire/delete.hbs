@@ -1,0 +1,22 @@
+<div class="container">
+    {{>messages}}
+    <div class="row mt-5">
+        <div class="col-md-6 m-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title"><i class=""></i> Remove questionnaire?</h3>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Title: {{questionnaire.title}}</h3>
+                </div>
+                <div class="card-footer">
+                    <form method="POST" action="/questionnaires/delete/{{questionnaire.id}}">
+                        <input type="hidden" name="_csrf" value="{{csrfToken}}">
+                        <button type="submit" id="removeQuestionnairebtn" class="btn btn-primary"><i class=""></i>Remove</button>
+                    </form>
+                    <p class="lead mt-4"><a href="/questionnaires">Cancel</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

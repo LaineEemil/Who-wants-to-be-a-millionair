@@ -1,0 +1,31 @@
+<div class="container-fluid">
+    <div class="row mt-5">
+        <div class="col-md-8 m-auto">
+            <div class="card card-body">
+                <h3 class="text-center mb-3"><i class=""></i>Questionnaire</h3>
+                {{>messages}}
+                    <div class="form-group">
+                        <input type="hidden" name="id" id="id" {{#if questionnaire.id}}value="{{questionnaire.id}}" {{/if}} required>
+                        <label for="title">Title</label>
+                        <input type="text" name="title" class="form-control" id="title" {{#if questionnaire.title}}value="{{questionnaire.title}}" {{/if}} required>
+
+                        <label for="submissions">Max submissions</label>
+                        <input type="number" id="submissions" name="submissions" min="1" class="form-control q-title" value="{{#if this.submissions}}{{this.submissions}}{{else}}1{{/if}}">
+
+                        <div id="questions">
+						{{#if questionnaire}}
+                            {{#each questionnaire.questions as |question index|}}
+                            {{>question_editor question}}
+                            {{/each}}
+                        {{/if}}
+                        </div>
+                        <button id="add-question-btn" onclick="addQuestion('#questions');" type="button" class="btn btn-secondary">Add a question</button>
+
+                    </div>
+                    <div id="errors" class="alert alert-danger hidden"></div>
+                    <button type="submit" id="btnSave" onclick="save();" class="btn btn-primary col-2">Save</button>
+                
+            </div>
+        </div>
+    </div>
+</div>

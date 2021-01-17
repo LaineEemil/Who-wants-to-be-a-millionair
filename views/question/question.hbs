@@ -1,0 +1,37 @@
+<div id="exercise" class="container">
+    <div class="row mt-5">
+        <div class="col-8 m-auto">
+            <div class="card card-body">
+                {{>messages}}
+                <h3 id="title" class="text-center mb-3">{{ question.title }}</h3>
+                <h5 class="instructions text-right mb-2">{{ question.hint }}</h5>
+                <h5 class="instructions text-right mb-2">{{ question.maxPoints }} € Question</h5>
+                <form method="POST">
+                    <input type="hidden" name="questionIndex" {{#if questionIndex}}value="{{questionIndex}}" {{/if}}>
+                    <input type="hidden" name="removedOption1" {{#if removedOption1}}value="{{removedOption1}}" {{/if}}>
+                    <input type="hidden" name="removedOption2" {{#if removedOption2}}value="{{removedOption2}}" {{/if}}>
+
+                    <input type="hidden" name="usingLifeLine" value='false'>
+
+                    <input type="hidden" name="usedLifeLine1" {{#if usedLifeLine1}}value="{{usedLifeLine1}}" {{/if}}>
+                    <input type="hidden" name="usedLifeLine2" {{#if usedLifeLine2}}value="{{usedLifeLine2}}" {{/if}}>
+                    <input type="hidden" name="usedLifeLine3" {{#if usedLifeLine3}}value="{{usedLifeLine3}}" {{/if}}>
+
+                    <div class="form-group">
+                        {{#each question.options as |option|}}
+                        <input type="radio" name="answer" onclick="document.getElementsByName('grade')[0].disabled = false;" value="{{ option.option }}"> {{ option.option }}
+                        <br> {{/each}}
+                    </div>
+                    <button id="grade" type="submit" onclick="document.getElementsByName('usingLifeLine')[0].value = 1;" class="btn btn-success"
+                        {{#if usedLifeLine1}}disabled='true' {{/if}}>Remove two!</button>
+                    <button id="grade" type="submit" onclick="document.getElementsByName('usingLifeLine')[0].value = 2;" class="btn btn-success"
+                        {{#if usedLifeLine2}}disabled='true' {{/if}}>Ask the audience</button>
+                    <button id="grade" type="submit" onclick="document.getElementsByName('usingLifeLine')[0].value = 3;" class="btn btn-success"
+                        {{#if usedLifeLine3}}disabled='true' {{/if}}>Call to a friend</button>
+
+                    <button id="grade" name="grade" disabled='true' type="submit" class="btn btn-primary">Lock answer</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

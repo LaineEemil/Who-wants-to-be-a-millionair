@@ -1,0 +1,17 @@
+<tr class="questionnaire-tr">
+    <!--<td><input type="checkbox"></td>-->
+    <td>
+        <button class="btn btn-light show-question-list-btn" data-state="collapsed" data-toggle="collapse"
+            data-target="#questions-{{this.id}}">&#10133;</span></button>
+        <a class="btn btn-link question-title-link" href="/questionnaires/edit/{{this.id}}">{{this.title}}</a>
+        <br>
+        <ul id="questions-{{this.id}}" class="collapse">
+            {{#each this.questions as |question index|}}
+            <li class="question-li">{{question.title}}</li>
+            {{/each}}
+        </ul>
+    </td>
+    <td>{{this.questions.length}}</td>
+    <td>{{this.submissions}}</td>
+    <td><a href="/questionnaires/delete/{{this.id}}" class="btn btn-outline-danger">&#128465;</a></td>
+</tr>

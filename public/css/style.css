@@ -1,0 +1,80 @@
+#assignment {
+    font-weight: bold;
+    font-size: 1.3rem;
+    width: 675px;
+    padding: 5px;
+    margin: 15px auto;
+}
+
+#container {
+    display: flex;
+    flex-flow: row wrap;
+    width: 675px;
+    min-height: 64px;
+    padding: 5px;
+    margin: 15px auto;
+    border: 2px solid black;
+}
+
+#container div {
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+#bubbles div:hover,
+#container div:hover {
+    color: aquamarine;
+}
+
+#bubbles {
+    width: 620px;
+    min-height: 700px;
+    padding: 10px;
+    position: relative;
+    border: 2px solid black;
+    margin: 15px auto;
+}
+
+.bubble {
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 5px;
+    position: absolute;
+    max-width: 185px;
+}
+
+.red {
+    background: red;
+}
+
+.yellow {
+    background: yellow;
+}
+
+.blue {
+    /* background: blue; */
+    background: lightskyblue;
+}
+
+.green {
+    background: green;
+}
+
+.hidden {
+    display: none;
+}
+
+textarea {
+    resize: none;
+}
